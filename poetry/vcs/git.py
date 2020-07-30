@@ -100,7 +100,7 @@ class ParsedUrl:
         self.rev = rev
 
     @classmethod
-    def parse(cls, url):  # type: () -> ParsedUrl
+    def parse(cls, url):  # type: (str) -> ParsedUrl
         for pattern in PATTERNS:
             m = pattern.match(url)
             if m:

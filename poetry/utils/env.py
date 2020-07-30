@@ -130,7 +130,7 @@ class EnvError(Exception):
 
 
 class EnvCommandError(EnvError):
-    def __init__(self, e, input=None):  # type: (CalledProcessError) -> None
+    def __init__(self, e, input=None):  # type: (CalledProcessError, Optional[str]) -> None
         self.e = e
 
         message = "Command {} errored with the following return code {}, and output: \n{}".format(

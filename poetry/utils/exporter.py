@@ -32,7 +32,7 @@ class Exporter(object):
         dev=False,
         extras=None,
         with_credentials=False,
-    ):  # type: (str, Path, Union[IO, str], bool, bool, bool) -> None
+    ):  # type: (str, Path, Union[IO, str], bool, bool, Any, bool) -> None
         if fmt not in self.ACCEPTED_FORMATS:
             raise ValueError("Invalid export format: {}".format(fmt))
 
@@ -53,7 +53,7 @@ class Exporter(object):
         dev=False,
         extras=None,
         with_credentials=False,
-    ):  # type: (Path, Union[IO, str], bool, bool, bool) -> None
+    ):  # type: (Path, Union[IO, str], bool, bool, Any, bool) -> None
         indexes = set()
         content = ""
         packages = self._poetry.locker.locked_repository(dev).packages
