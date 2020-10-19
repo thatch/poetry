@@ -1,18 +1,9 @@
 import hashlib
 import io
 
-from pkginfo.distribution import HEADER_ATTRS
-from pkginfo.distribution import HEADER_ATTRS_2_0
-
 from poetry.utils._compat import Path
 
 from .dependency import Dependency
-
-
-# Patching pkginfo to support Metadata version 2.1 (PEP 566)
-HEADER_ATTRS.update(
-    {"2.1": HEADER_ATTRS_2_0 + (("Provides-Extra", "provides_extra", True),)}
-)
 
 
 class FileDependency(Dependency):
